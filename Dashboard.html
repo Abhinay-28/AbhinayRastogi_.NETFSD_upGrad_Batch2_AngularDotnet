@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        .dashboard {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1f2937;
+            color: white;
+            width: 20%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            letter-spacing: 1px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 15px 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            flex: 0 0 30%;
+            box-sizing: border-box;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .card {
+                flex: 0 0 48%;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            .card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <nav class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1>Overview</h1>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Users</h3>
+                <p>1,250 active users</p>
+            </div>
+
+            <div class="card">
+                <h3>Revenue</h3>
+                <p>Rs 84,000 this month</p>
+            </div>
+
+            <div class="card">
+                <h3>New Orders</h3>
+                <p>320 orders received</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending Tickets</h3>
+                <p>18 support tickets open</p>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>
