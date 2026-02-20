@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter App</title>
+</head>
+
+<body>
+
+<h2>Counter Application</h2>
+
+<p id="count">0</p>
+
+<button id="incBtn">Increment</button>
+<button id="resetBtn">Reset</button>
+
+<script>
+let counter = 0;
+
+function incrementCounter(step) {
+    counter = counter + step;
+    document.getElementById("count").innerText = counter;
+}
+
+function resetCounter() {
+    counter = 0;
+    document.getElementById("count").innerText = counter;
+}
+
+document.getElementById("incBtn").addEventListener("click", function () {
+    incrementCounter(1);
+});
+
+document.getElementById("resetBtn").addEventListener("click", function () {
+    resetCounter();
+});
+</script>
+
+</body>
+</html>
