@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Live Form Validation</title>
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<label>Name:</label><br>
+<input type="text" id="name" onchange="validateName()">
+<p id="nameMsg"></p>
+
+<label>Email:</label><br>
+<input type="text" id="email" onchange="validateEmail()">
+<p id="emailMsg"></p>
+
+<label>Age:</label><br>
+<input type="number" id="age" onchange="validateAge()">
+<p id="ageMsg"></p>
+
+<br>
+<button onclick="saveData()">Register</button>
+
+<p id="finalMsg"></p>
+
+<script src="validate-form.js"></script>
+
+</body>
+</html>
