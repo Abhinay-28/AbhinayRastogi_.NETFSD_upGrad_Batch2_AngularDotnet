@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Feedback Form</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h3>Student Feedback Form</h3>
+
+    <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Enter Name">
+
+        <input type="email" id="email" placeholder="Enter Email">
+
+        <select id="rating">
+            <option value="">Select Course Rating</option>
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Average</option>
+            <option>Poor</option>
+        </select>
+
+        <textarea id="comments" placeholder="Comments"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="message"></div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $("#feedbackForm").submit(function (e) {
+
+        e.preventDefault();   
+
+        let name = $("#name").val().trim();
+        let email = $("#email").val().trim();
+
+        // validation using jQuery
+        if (name === "" || email === "") {
+            $("#message")
+                .removeClass("success")
+                .addClass("error")
+                .text("Name and Email are required!");
+            return;
+        }
+
+        // success message
+        $("#message")
+            .removeClass("error")
+            .addClass("success")
+            .text("Feedback submitted successfully!");
+
+        // clear form fields
+        $("#feedbackForm")[0].reset();
+    });
+
+});
+</script>
+
+</body>
+</html>
